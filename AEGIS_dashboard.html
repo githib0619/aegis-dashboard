@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEGIS AI 投資儀表板</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box}
+body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif}
+.header {background:linear-gradient(135deg,#1a1a3e,#0d2137);padding:24px 32px;border-bottom:2px solid #00ff88;display:flex;justify-content:space-between;align-items:center}
+.header h1 {font-size:26px;color:#00ff88;letter-spacing:2px}
+.header .time {color:#888;font-size:13px;margin-top:4px}
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:24px}
+.card {background:#111128;border:1px solid #1e1e4a;border-radius:12px;padding:20px}
+.card h2 {font-size:13px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.card .value {font-size:32px;font-weight:700;color:#00ff88}
+.card .sub {font-size:13px;color:#666;margin-top:6px}
+table {width:100%;border-collapse:collapse;margin-top:8px}
+th {background:#1e1e4a;padding:10px;font-size:12px;color:#888;text-align:left}
+td {padding:10px;font-size:13px;border-bottom:1px solid #1e1e4a}
+tr:hover td {background:#1a1a2e}
+.section {padding:0 24px 24px}
+.refresh-btn {position:fixed;bottom:24px;right:24px;background:#00ff88;color:#000;border:none;border-radius:50px;padding:12px 24px;font-size:14px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="header">
+  <div><h1>⚡ AEGIS AI 投資儀表板</h1><div class="time">更新時間：2026-05-21 11:02</div></div>
+  <div style="text-align:right">
+    <div style="color:#00ff88;font-size:20px;font-weight:700">低風險 ✅</div>
+    <div style="color:#888;font-size:13px">市場環境偏健康，可以偏積極觀察強勢股</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h2>🏛 台股大盤</h2>
+    <div class="value">41,362</div>
+    <div class="sub">MA20：40,530　MA60：36,375</div>
+    <div class="sub" style="margin-top:6px;color:#00ff88">多頭 ✅</div>
+  </div>
+  <div class="card">
+    <h2>🌏 美股環境</h2>
+    <div class="value">100</div>
+    <div class="sub">美股環境偏多，有利台股強勢股表現</div>
+    <div class="sub" style="margin-top:6px">NASDAQ 短線偏強，科技股環境較有利; 費半指數偏強，對台灣半導體族群有利</div>
+  </div>
+  <div class="card">
+    <h2>🛡 風險指標</h2>
+    <div class="value" style="color:#00ff88">0</div>
+    <div class="sub">低風險 ✅</div>
+    <div class="sub" style="margin-top:6px">市場環境偏健康，可以偏積極觀察強勢股</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card"><h2>📊 產業輪動雷達</h2><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>半導體</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:55.4%;height:100%;background:#00ff88;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#00ff88'>55.4</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>航運</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:48.2%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>48.2</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>AI電子</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:46.1%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>46.1</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>金融</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:46.1%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>46.1</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>傳產</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:33.2%;height:100%;background:#ff4444;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ff4444'>33.2</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div></div>
+</div>
+
+<div class="section">
+  <div class="card"><h2>📰 即時市場新聞</h2></div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>📋 持股追蹤清單</h2>
+    <table>
+      <tr><th>股票</th><th>買入價</th><th>停損價</th><th>目標價</th><th>狀態</th></tr>
+      <tr><td>【創意】3443.TW</td><td>4975</td><td>4626.75</td><td>5721.25</td><td style='color:#00ff88'>持有中</td></tr><tr><td>【緯穎】6669.TW</td><td>5400</td><td>5022.0</td><td>6210.0</td><td style='color:#00ff88'>持有中</td></tr><tr><td>【台積電】2330.TW</td><td>2235</td><td>2123.25</td><td>2503.2</td><td style='color:#00ff88'>持有中</td></tr>
+    </table>
+  </div>
+</div>
+
+<button class="refresh-btn" onclick="location.reload()">🔄 重新整理</button>
+</body>
+</html>
