@@ -11,19 +11,24 @@ body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif;padding
 .back:hover {text-decoration:underline}
 .header {background:#111128;border:1px solid #1e1e4a;border-radius:12px;padding:24px;margin-bottom:20px}
 .stock-title {font-size:28px;font-weight:700;color:#fff;margin-bottom:4px}
-.stock-sub {color:#888;font-size:14px;margin-bottom:16px}
+.stock-sub {color:#888;font-size:14px;margin-bottom:12px}
 .score-big {font-size:56px;font-weight:700;color:#00ff88;line-height:1}
 .score-label {color:#888;font-size:13px;margin-top:4px}
-.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:16px}
-.metric {background:#0d0d20;border-radius:8px;padding:14px;text-align:center}
-.metric .val {font-size:22px;font-weight:700;margin-bottom:4px}
+.metrics {display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:16px}
+.metric {background:#0d0d20;border-radius:8px;padding:12px;text-align:center}
+.metric .val {font-size:20px;font-weight:700;margin-bottom:4px}
 .metric .lbl {font-size:11px;color:#888}
 .section {background:#111128;border:1px solid #1e1e4a;border-radius:12px;padding:20px;margin-bottom:16px}
 .section-title {color:#00ff88;font-size:14px;font-weight:700;border-left:3px solid #00ff88;padding-left:10px;margin-bottom:14px}
-.layout {display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:768px){.layout{grid-template-columns:1fr}}
-.tags {display:flex;flex-wrap:wrap;gap:6px}
-.advice-box {background:#00ff8815;border:1px solid #00ff8840;border-radius:8px;padding:14px;margin-top:12px;color:#00ff88;font-size:15px;font-weight:700;text-align:center}
+.layout2 {display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.layout3 {display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:768px){.layout2,.layout3{grid-template-columns:1fr}}
+.advice-box {border-radius:8px;padding:14px;margin-top:12px;font-size:15px;font-weight:700;text-align:center}
+.analysis-block {background:#0d0d20;border-radius:8px;padding:14px;margin-bottom:10px}
+.analysis-label {color:#00ff88;font-size:12px;font-weight:700;margin-bottom:6px}
+.analysis-text {color:#ccc;font-size:13px;line-height:1.6}
+.pos-bar {background:#1e1e4a;border-radius:6px;height:8px;margin-top:6px}
+.pos-fill {height:8px;border-radius:6px;background:linear-gradient(90deg,#00ff88,#ffaa00,#ff4444)}
 </style>
 </head>
 <body>
@@ -32,18 +37,24 @@ body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif;padding
 
 <div class="header">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px">
-        <div>
+        <div style="flex:1">
             <div class="stock-title">楠梓電</div>
-            <div class="stock-sub">2316.TW　｜　PCB　｜　更新：2026-05-22 15:49</div>
-            <div class="advice-box">偏多觀察 📈</div>
+            <div class="stock-sub">2316.TW　｜　PCB　｜　2026-05-22 16:29</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin:10px 0"><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:4px 12px;border-radius:16px;font-size:13px;margin:3px;display:inline-block;font-weight:700'>💰外資大買</span><span style='background:#88888820;color:#888888;border:1px solid #888888;padding:4px 12px;border-radius:16px;font-size:13px;margin:3px;display:inline-block;font-weight:700'>📈投信大買</span><span style='background:#88888820;color:#888888;border:1px solid #888888;padding:4px 12px;border-radius:16px;font-size:13px;margin:3px;display:inline-block;font-weight:700'>🔴歷史高點區</span></div>
+            <div class="advice-box" style="background:#ffaa0020;
+                color:#ffaa00;
+                border:1px solid #ffaa00">
+                偏多觀察 📈
+            </div>
         </div>
-        <div style="text-align:center">
+        <div style="text-align:center;min-width:120px">
             <div class="score-big">71.6</div>
             <div class="score-label">AI 總分</div>
+            <div style="font-size:12px;color:#888;margin-top:4px">七維評分</div>
         </div>
     </div>
 
-    <div class="grid">
+    <div class="metrics">
         <div class="metric">
             <div class="val" style="color:#fff">153.5</div>
             <div class="lbl">現價</div>
@@ -55,6 +66,10 @@ body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif;padding
         <div class="metric">
             <div class="val" style="color:#00ff88">171.92</div>
             <div class="lbl">目標價</div>
+        </div>
+        <div class="metric">
+            <div class="val" style="color:#ffaa00">1.72</div>
+            <div class="lbl">風險報酬比</div>
         </div>
         <div class="metric">
             <div class="val" style="color:#00ff88">89</div>
@@ -69,145 +84,338 @@ body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif;padding
             <div class="lbl">ML預測</div>
         </div>
         <div class="metric">
-            <div class="val" style="color:#ffaa00">50</div>
-            <div class="lbl">新聞分數</div>
+            <div class="val" style="color:#00ff88">100</div>
+            <div class="lbl">籌碼面</div>
+        </div>
+        <div class="metric">
+            <div class="val" style="color:#00ff88">80</div>
+            <div class="lbl">季營收</div>
         </div>
         <div class="metric">
             <div class="val" style="color:#aaa">72.9</div>
             <div class="lbl">RSI</div>
         </div>
+        <div class="metric">
+            <div class="val" style="color:#aaa">91.8%</div>
+            <div class="lbl">52週位置</div>
+        </div>
+        <div class="metric">
+            <div class="val" style="color:#aaa">19.4%</div>
+            <div class="lbl">營收年增</div>
+        </div>
+    </div>
+
+    <!-- 52週位置進度條 -->
+    <div style="margin-top:16px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:#888;margin-bottom:4px">
+            <span>52週低點</span>
+            <span>52週位置：91.8%</span>
+            <span>52週高點</span>
+        </div>
+        <div class="pos-bar">
+            <div class="pos-fill" style="width:91.8%"></div>
+        </div>
     </div>
 </div>
 
-<div class="layout">
-    <!-- 左欄 -->
+<div class="layout2">
     <div>
+        <!-- 七維雷達圖 -->
         <div class="section">
-            <div class="section-title">📡 五維評分雷達圖</div>
+            <div class="section-title">📡 七維評分雷達圖</div>
             
-    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-        <polygon points='150.0,125.0 126.2,142.3 135.3,170.2 164.7,170.2 173.8,142.3' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='150.0,100.0 102.4,134.5 120.6,190.5 179.4,190.5 197.6,134.5' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='150.0,75.0 78.7,126.8 105.9,210.7 194.1,210.7 221.3,126.8' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='150.0,50.0 54.9,119.1 91.2,230.9 208.8,230.9 245.1,119.1' fill='none' stroke='#1e1e4a' stroke-width='1'/>
-        <line x1='150' y1='150' x2='150.0' y2='50.0' stroke='#1e1e4a' stroke-width='1'/><line x1='150' y1='150' x2='54.9' y2='119.1' stroke='#1e1e4a' stroke-width='1'/><line x1='150' y1='150' x2='91.2' y2='230.9' stroke='#1e1e4a' stroke-width='1'/><line x1='150' y1='150' x2='208.8' y2='230.9' stroke='#1e1e4a' stroke-width='1'/><line x1='150' y1='150' x2='245.1' y2='119.1' stroke='#1e1e4a' stroke-width='1'/>
-        <polygon points='150.0,61.0 101.5,134.2 119.4,192.1 179.4,190.5 197.6,134.5' fill='#00ff8830' stroke='#00ff88' stroke-width='2'/>
-        <text x='150.0' y='25.0' fill='#888' font-size='11' text-anchor='middle'>基本面</text><text x='150.0' y='39.0' fill='#00ff88' font-size='11' text-anchor='middle' font-weight='700'>89</text><text x='31.1' y='111.4' fill='#888' font-size='11' text-anchor='middle'>技術面</text><text x='31.1' y='125.4' fill='#00ff88' font-size='11' text-anchor='middle' font-weight='700'>51</text><text x='76.5' y='251.1' fill='#888' font-size='11' text-anchor='middle'>ML預測</text><text x='76.5' y='265.1' fill='#00ff88' font-size='11' text-anchor='middle' font-weight='700'>52.0</text><text x='223.5' y='251.1' fill='#888' font-size='11' text-anchor='middle'>新聞</text><text x='223.5' y='265.1' fill='#00ff88' font-size='11' text-anchor='middle' font-weight='700'>50</text><text x='268.9' y='111.4' fill='#888' font-size='11' text-anchor='middle'>大盤</text><text x='268.9' y='125.4' fill='#00ff88' font-size='11' text-anchor='middle' font-weight='700'>50</text>
-        <text x='150' y='285' fill='#444' font-size='10' text-anchor='middle'>五維評分雷達圖</text>
+    <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <polygon points='160.0,132.5 138.5,142.9 133.2,166.1 148.1,184.8 171.9,184.8 186.8,166.1 181.5,142.9' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='160.0,105.0 117.0,125.7 106.4,172.2 136.1,209.6 183.9,209.6 213.6,172.2 203.0,125.7' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='160.0,77.5 95.5,108.6 79.6,178.4 124.2,234.3 195.8,234.3 240.4,178.4 224.5,108.6' fill='none' stroke='#1e1e4a' stroke-width='1'/><polygon points='160.0,50.0 74.0,91.4 52.8,184.5 112.3,259.1 207.7,259.1 267.2,184.5 246.0,91.4' fill='none' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='160.0' y2='50.0' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='74.0' y2='91.4' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='52.8' y2='184.5' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='112.3' y2='259.1' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='207.7' y2='259.1' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='267.2' y2='184.5' stroke='#1e1e4a' stroke-width='1'/><line x1='160' y1='160' x2='246.0' y2='91.4' stroke='#1e1e4a' stroke-width='1'/>
+        <polygon points='160.0,62.1 116.1,125.0 104.2,172.7 112.3,259.1 198.2,239.3 213.6,172.2 203.0,125.7' fill='#00ff8825' stroke='#00ff88' stroke-width='2'/>
+        <text x='160.0' y='22.0' fill='#888' font-size='10' text-anchor='middle'>基本面</text><text x='160.0' y='35.0' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>89</text><text x='52.1' y='74.0' fill='#888' font-size='10' text-anchor='middle'>技術面</text><text x='52.1' y='87.0' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>51</text><text x='25.5' y='190.7' fill='#888' font-size='10' text-anchor='middle'>ML</text><text x='25.5' y='203.7' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>52.0</text><text x='100.1' y='284.3' fill='#888' font-size='10' text-anchor='middle'>籌碼</text><text x='100.1' y='297.3' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>100</text><text x='219.9' y='284.3' fill='#888' font-size='10' text-anchor='middle'>營收</text><text x='219.9' y='297.3' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>80</text><text x='294.5' y='190.7' fill='#888' font-size='10' text-anchor='middle'>新聞</text><text x='294.5' y='203.7' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>50</text><text x='267.9' y='74.0' fill='#888' font-size='10' text-anchor='middle'>大盤</text><text x='267.9' y='87.0' fill='#00ff88' font-size='10' text-anchor='middle' font-weight='700'>50</text>
+        <text x='160' y='310' fill='#444' font-size='10' text-anchor='middle'>七維評分雷達圖</text>
     </svg>
         </div>
 
+        <!-- AI 完整分析 -->
         <div class="section">
-            <div class="section-title">📈 技術面訊號</div>
-            <div class="tags"><span style='background:#00ff8820;color:#00ff88;border:1px solid #00ff88;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>多頭排列 ✅</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>MA5站上MA20</span><span style='background:#ff444420;color:#ff4444;border:1px solid #ff4444;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>RSI過熱 72.9 ⚠️</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>MACD多頭</span><span style='background:#ff444420;color:#ff4444;border:1px solid #ff4444;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>布林上軌壓力區 ⚠️</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>成交量放大</span></div>
+            <div class="section-title">🤖 AI 完整分析報告</div>
+            <div class="analysis-block">
+                <div class="analysis-label">📌 進場邏輯</div>
+                <div class="analysis-text">三大法人今日全面強力買超，外資大買 128,871 張，投信同步買超 690,000 張，籌碼面極為強勁，法人明顯在積極布局。 股價站上均線系統呈多頭排列，配合成交量放大，短線趨勢偏多。 注意 RSI 已達 72.9，短線略有過熱，建議分批進場。</div>
+            </div><div class="analysis-block">
+                <div class="analysis-label">📌 基本面</div>
+                <div class="analysis-text">基本面極為優秀，ROE極強 23.3% / 淨利率佳 72.0% / 營收高速成長 17.4%，為產業內頂尖水準。</div>
+            </div><div class="analysis-block">
+                <div class="analysis-label">📌 特殊題材</div>
+                <div class="analysis-text">無特殊題材加持</div>
+            </div><div class="analysis-block">
+                <div class="analysis-label">📌 產業背景</div>
+                <div class="analysis-text">PCB 產業受惠 AI 伺服器高階板需求，高頻高速板為主要成長動能。</div>
+            </div><div class="analysis-block">
+                <div class="analysis-label">📌 風險提醒</div>
+                <div class="analysis-text">RSI 72.9 短線過熱，建議分批進場</div>
+            </div><div class="analysis-block">
+                <div class="analysis-label">📌 操作建議</div>
+                <div class="analysis-text">偏多觀察，可小量試單。建議倉位：15~25%。買點參考 153.5 元，停損 142.76 元（-7%），目標 171.92 元（+12%），風險報酬比約 1:1.72。</div>
+            </div>
         </div>
 
+        <!-- 技術面訊號 -->
+        <div class="section">
+            <div class="section-title">📈 技術面訊號</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span style='background:#00ff8820;color:#00ff88;border:1px solid #00ff88;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>多頭排列 ✅</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>MA5站上MA20</span><span style='background:#ff444420;color:#ff4444;border:1px solid #ff4444;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>RSI過熱 72.9 ⚠️</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>MACD多頭</span><span style='background:#ff444420;color:#ff4444;border:1px solid #ff4444;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>布林上軌壓力區 ⚠️</span><span style='background:#ffaa0020;color:#ffaa00;border:1px solid #ffaa00;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>成交量放大</span>
+            </div>
+        </div>
+
+        <!-- 基本面亮點 -->
         <div class="section">
             <div class="section-title">💹 基本面亮點</div>
-            <div class="tags"><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>ROE極強 23.3%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>淨利率佳 72.0%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>營收高速成長 17.4%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>獲利高速成長 141.1%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>負債比極低</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>流動比率佳</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>本益比低估 PE=11.5</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px'>股息殖利率高 33.0%</span></div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>ROE極強 23.3%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>淨利率佳 72.0%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>營收高速成長 17.4%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>獲利高速成長 141.1%</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>負債比極低</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>流動比率佳</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>本益比低估 PE=11.5</span><span style='background:#00ff8810;color:#00ff88;border:1px solid #00ff8840;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>股息殖利率高 33.0%</span>
+            </div>
+        </div>
+
+        <!-- 籌碼面 -->
+        <div class="section">
+            <div class="section-title">💰 籌碼面</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span style='background:#ffaa0010;color:#ffaa00;border:1px solid #ffaa0040;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>外資大買 128,871 張</span><span style='background:#ffaa0010;color:#ffaa00;border:1px solid #ffaa0040;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>投信大買 690,000 張</span><span style='background:#ffaa0010;color:#ffaa00;border:1px solid #ffaa0040;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>自營買超 1,000 張</span>
+            </div>
+            <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+                <div style="background:#0d0d20;border-radius:8px;padding:12px;text-align:center">
+                    <div style="font-size:18px;font-weight:700;color:#00ff88">128,871</div>
+                    <div style="font-size:11px;color:#888">外資（張）</div>
+                </div>
+                <div style="background:#0d0d20;border-radius:8px;padding:12px;text-align:center">
+                    <div style="font-size:18px;font-weight:700;color:#00ff88">690,000</div>
+                    <div style="font-size:11px;color:#888">投信（張）</div>
+                </div>
+                <div style="background:#0d0d20;border-radius:8px;padding:12px;text-align:center">
+                    <div style="font-size:18px;font-weight:700;color:#aaa">100</div>
+                    <div style="font-size:11px;color:#888">籌碼分數</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 季營收 -->
+        <div class="section">
+            <div class="section-title">📊 季營收分析</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span style='background:#00aaff10;color:#00aaff;border:1px solid #00aaff40;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>季營收年增 19.4%，穩健成長</span><span style='background:#00aaff10;color:#00aaff;border:1px solid #00aaff40;padding:3px 10px;border-radius:12px;font-size:12px;margin:3px;display:inline-block'>季增率 8.2%，環比成長</span>
+            </div>
         </div>
     </div>
 
-    <!-- 右欄：新聞 -->
     <div>
+        <!-- 當沖評估 -->
+        
+        <div class="section">
+            <div class="section-title">🔄 當沖適合度評估</div>
+
+            <div style='display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px'>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px;text-align:center'>
+                    <div style='font-size:13px;color:#888;margin-bottom:8px'>整體評級</div>
+                    <div style='font-size:20px;font-weight:700;color:#00ff88'>★★★★★ 極度適合</div>
+                </div>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px;text-align:center'>
+                    <div style='font-size:13px;color:#888;margin-bottom:8px'>當沖方向</div>
+                    <div style='font-size:20px;font-weight:700'>偏多 📈</div>
+                </div>
+            </div>
+
+            <div style='display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px'>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px;text-align:center'>
+                    <div style='font-size:13px;color:#888;margin-bottom:4px'>近5日當沖勝率</div>
+                    <div style='font-size:28px;font-weight:700;color:#00ff88'>60.0%</div>
+                    <div style='font-size:12px;color:#666'>3勝 2敗　平均報酬 3.59%</div>
+                </div>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px;text-align:center'>
+                    <div style='font-size:13px;color:#888;margin-bottom:4px'>損益平衡點</div>
+                    <div style='font-size:28px;font-weight:700;color:#ffaa00'>154.2</div>
+                    <div style='font-size:12px;color:#666'>需漲 0.43% 才回本（含手續費+稅）</div>
+                </div>
+            </div>
+
+            <div style='background:#0d0d20;border-radius:8px;padding:16px;margin-bottom:16px'>
+                <div style='font-size:13px;color:#888;margin-bottom:12px'>📋 當沖條件檢查</div>
+                <div style='display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888'>成交量</span><span>✅ 日均 10,045,035 張（流動性充足）</span></div><div style='display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888'>日內波動</span><span>✅ 平均 7.7%（操作空間大）</span></div><div style='display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888'>RSI</span><span>⚠️ 72.9（略熱，不追漲停）</span></div><div style='display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888'>外資</span><span>✅ 買超 128,871 張（強力支撐）</span></div><div style='display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888'>股價</span><span>✅ 153.5元</span></div>
+            </div>
+
+            <div style='display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px'>
+                <div style='background:#00ff8810;border:1px solid #00ff8840;border-radius:8px;padding:16px'>
+                    <div style='color:#00ff88;font-weight:700;margin-bottom:10px'>📈 多單策略</div>
+                    <div style='font-size:13px;color:#aaa;margin-bottom:8px'>進場時機：</div>
+                    <div style='font-size:13px;color:#fff;margin-bottom:12px'>不建議追多，等待 RSI 回落至 65 以下</div>
+                    <div style='display:flex;justify-content:space-between;margin-bottom:6px'>
+                        <span style='color:#888;font-size:12px'>目標一</span>
+                        <span style='color:#00ff88;font-weight:700'>156.6</span>
+                    </div>
+                    <div style='display:flex;justify-content:space-between;margin-bottom:6px'>
+                        <span style='color:#888;font-size:12px'>目標二</span>
+                        <span style='color:#00ff88;font-weight:700'>158.1</span>
+                    </div>
+                    <div style='display:flex;justify-content:space-between'>
+                        <span style='color:#888;font-size:12px'>停損</span>
+                        <span style='color:#ff4444;font-weight:700'>150.4</span>
+                    </div>
+                </div>
+                <div style='background:#ff444410;border:1px solid #ff444440;border-radius:8px;padding:16px'>
+                    <div style='color:#ff4444;font-weight:700;margin-bottom:10px'>📉 空單策略</div>
+                    <div style='font-size:13px;color:#aaa;margin-bottom:8px'>進場時機：</div>
+                    <div style='font-size:13px;color:#fff;margin-bottom:12px'>RSI 過熱，開盤衝高可考慮空單，目標 MA20 126.4</div>
+                    <div style='display:flex;justify-content:space-between;margin-bottom:6px'>
+                        <span style='color:#888;font-size:12px'>目標</span>
+                        <span style='color:#ff4444;font-weight:700'>150.4</span>
+                    </div>
+                    <div style='display:flex;justify-content:space-between'>
+                        <span style='color:#888;font-size:12px'>停損</span>
+                        <span style='color:#ffaa00;font-weight:700'>156.6</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style='background:#0d0d20;border-radius:8px;padding:16px;margin-bottom:16px'>
+                <div style='font-size:13px;color:#888;margin-bottom:12px'>🕐 關鍵價位</div>
+                <div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>昨日收盤</span><span style='color:#fff;font-weight:700'>151.0</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>昨日最高</span><span style='color:#fff;font-weight:700'>151.0</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>昨日最低</span><span style='color:#fff;font-weight:700'>138.5</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>上方整數關卡</span><span style='color:#fff;font-weight:700'>160</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>下方整數關卡</span><span style='color:#fff;font-weight:700'>150</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>20日均線</span><span style='color:#fff;font-weight:700'>126.4</span></div><div style='display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e1e4a'><span style='color:#888;font-size:12px'>5日均線</span><span style='color:#fff;font-weight:700'>141.5</span></div>
+            </div>
+
+            <div style='display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px'>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px'>
+                    <div style='font-size:13px;color:#888;margin-bottom:8px'>⏰ 最佳當沖時段</div>
+                    <div style='font-size:13px;color:#fff'>09:00~09:30（開盤最活躍）、12:30~13:30（尾盤衝量）</div>
+                </div>
+                <div style='background:#0d0d20;border-radius:8px;padding:16px'>
+                    <div style='font-size:13px;color:#888;margin-bottom:8px'>📊 大盤連動性</div>
+                    <div style='font-size:13px;color:#fff'>⚠️ 0.45（低連動，需獨立判斷）</div>
+                </div>
+            </div>
+
+            <div style='background:#0d0d20;border-radius:8px;padding:16px;margin-bottom:16px'>
+                <div style='font-size:13px;color:#888;margin-bottom:8px'>📦 籌碼狀況</div>
+                <div style='font-size:13px;color:#fff'>⚠️ 近期量能大增，散戶追價明顯，小心洗盤</div>
+            </div>
+
+            <div style='background:#ff444410;border:1px solid #ff444440;border-radius:8px;padding:16px'>
+                <div style='color:#ff4444;font-weight:700;margin-bottom:10px'>⚠️ 今日特別注意</div>
+                <div style='font-size:13px;color:#ffaa00;padding:4px 0'>• RSI 過熱，絕對不追漲停</div><div style='font-size:13px;color:#ffaa00;padding:4px 0'>• 11:30 前若無明確方向，考慮出場</div><div style='font-size:13px;color:#ffaa00;padding:4px 0'>• 成交量需放大才確認突破</div>
+            </div>
+        </div>
+
+        <!-- 個股新聞 -->
         <div class="section">
             <div class="section-title">📰 個股專屬新聞</div>
             
-            <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOME5yemxtd0lLNEVUQkdOU2UtcWRLNnRKalVHSmZKOER1OEZFYVJPQnhKTjBSYkM0YkQ1UmJXZFBCMUlubktqM29rUmNtUnVUc3NUeFNxOFJJVzY4NmFVSkJaVGRVR1BnWmJpNC1FZHdILXNOaVZXb1hLVG5ycW1TdUtBS2ZGVDFjQ0JESVVR?oc=5" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #00ff88;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <a href="https://money.udn.com/money/story/5612/9519725" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #00ff88;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#00ff8820;color:#00ff88;
                         border:1px solid #00ff88;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>📈 利多</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>📈 利多</span>
+                    <span style='color:#888;font-size:11px'>經濟日報</span>
+                    <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
+                </div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>精準穿透關鍵供應鏈 兆豐00996A 雙軌配置發威 收盤14.62元創新高價</div>
+            </div>
+            </a>
+            <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOME5yemxtd0lLNEVUQkdOU2UtcWRLNnRKalVHSmZKOER1OEZFYVJPQnhKTjBSYkM0YkQ1UmJXZFBCMUlubktqM29rUmNtUnVUc3NUeFNxOFJJVzY4NmFVSkJaVGRVR1BnWmJpNC1FZHdILXNOaVZXb1hLVG5ycW1TdUtBS2ZGVDFjQ0JESVVR?oc=5" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #00ff88;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
+                    <span style='background:#00ff8820;color:#00ff88;
+                        border:1px solid #00ff88;padding:2px 8px;
+                        border-radius:12px;font-size:11px;font-weight:700'>📈 利多</span>
                     <span style='color:#888;font-size:11px'>Google中文</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 3天前</span>
                 </div>
                 <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>【10:34 即時新聞】楠梓電(2316)股價勁揚逾9%至138.5元，受AI高階PCB與營收成長加持＋挑戰前高壓力區、留意法人籌碼變化 - CMoney投資網誌</div>
             </div>
             </a>
-            <a href="https://money.udn.com/money/story/5612/9519620" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #00ff88;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <a href="https://tw.stock.yahoo.com/news/%E7%B6%B2%E5%AE%B6ai-pc%E9%8A%B7%E5%94%AE%E5%B9%B4%E5%A2%9E%E9%80%BE%E5%85%A9%E6%88%90-%E5%89%8D%E5%8D%81%E7%86%B1%E9%8A%B7%E9%9B%99a%E5%93%81%E7%89%8C%E9%9C%B8%E6%A6%9C%E5%85%AD%E6%88%90-082035396.html" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #00ff88;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#00ff8820;color:#00ff88;
                         border:1px solid #00ff88;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>📈 利多</span>
-                    <span style='color:#888;font-size:11px'>經濟日報</span>
-                    <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
-                </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>耕興股東會／配息12元、殖利率5.44% FCC 新制催化高階檢測轉單</div>
-            </div>
-            </a>
-            <a href="https://money.udn.com/money/story/5612/9519624" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
-                    <span style='background:#88888820;color:#888888;
-                        border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
-                    <span style='color:#888;font-size:11px'>經濟日報</span>
-                    <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
-                </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>台灣大虛擬資產交易所周年數據破圈 七成交易為小額投資</div>
-            </div>
-            </a>
-            <a href="https://tw.stock.yahoo.com/news/%E4%BA%AC%E8%8F%AF%E5%9F%8E%E9%A2%A8%E6%B3%A2%EF%BC%9F%E4%B8%AD%E7%9F%B3%E5%8C%96%E8%91%A3%E5%BA%A7%E9%99%B3%E7%91%9E%E9%9A%86%E8%82%A1%E6%9D%B1%E6%9C%83%E5%BE%8C%E7%AA%81%E8%AB%8B%E8%BE%AD-61%E7%94%9F%E6%95%88-074330504.html" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
-                    <span style='background:#88888820;color:#888888;
-                        border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>📈 利多</span>
                     <span style='color:#888;font-size:11px'>Yahoo財經</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
                 </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>京華城風波？中石化董座陳瑞隆股東會後突請辭 6/1生效</div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>網家AI PC銷售年增逾兩成，前十熱銷雙A品牌霸榜六成</div>
             </div>
             </a>
-            <a href="https://money.udn.com/money/story/5612/9519612" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <a href="https://money.udn.com/money/story/5612/9519722" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #888888;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#88888820;color:#888888;
                         border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>➡️ 中性</span>
                     <span style='color:#888;font-size:11px'>經濟日報</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
                 </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>國際生物多樣性日 永豐餘舊鐵橋濕地辦志工假期</div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>4月 M1B 及 M2年增率雙升 分別為8.25%及6.45%</div>
             </div>
             </a>
-            <a href="https://tw.stock.yahoo.com/news/%E6%96%B0%E4%BB%A3%E5%8A%9B%E6%8B%9A6-8%E6%9C%88%E7%87%9F%E6%94%B6%E5%84%AA%E6%96%BC%E5%8E%BB%E5%B9%B4%E5%90%8C%E6%9C%9F-%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E5%BB%A0%E6%98%8E%E5%B9%B42%E6%9C%88%E5%BB%BA%E7%BD%AE%E5%AE%8C%E6%88%90-073709275.html" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <a href="https://money.udn.com/money/story/5612/9519718" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #888888;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#88888820;color:#888888;
                         border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>➡️ 中性</span>
+                    <span style='color:#888;font-size:11px'>經濟日報</span>
+                    <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
+                </div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>虛擬資產投資非年輕人專利！台灣大 TWEX 五成用戶為40歲以上族群</div>
+            </div>
+            </a>
+            <a href="https://tw.stock.yahoo.com/news/%E5%9C%B0%E7%B7%A3%E8%A1%9D%E7%AA%81%E8%88%87%E6%B5%81%E5%8B%95%E6%80%A7%E7%B7%8A%E7%B8%AE%E5%A4%BE%E6%93%8A-%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E8%82%A1%E6%B3%A1%E6%B2%AB%E6%81%90%E9%9B%A3%E9%80%83%E7%A0%B4%E6%BB%85-082159660.html" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #888888;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
+                    <span style='background:#88888820;color:#888888;
+                        border:1px solid #888888;padding:2px 8px;
+                        border-radius:12px;font-size:11px;font-weight:700'>➡️ 中性</span>
                     <span style='color:#888;font-size:11px'>Yahoo財經</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
                 </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>新代力拚6-8月營收優於去年同期，馬來西亞廠明年2月建置完成</div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>地緣衝突與流動性緊縮夾擊 人工智慧股泡沫恐難逃破滅</div>
             </div>
             </a>
-            <a href="https://tw.stock.yahoo.com/news/%E6%94%BF%E7%AD%96%E8%AD%B0%E9%A1%8C%E6%8E%A8%E5%8B%95%E4%BF%A1%E5%BF%83-%E4%B8%8A%E8%AD%89%E7%B6%9C%E6%8C%87%E9%80%B1%E4%BA%94%E6%94%B6%E6%BC%B20-87-%E6%BB%AC%E6%B7%B1300%E6%8C%87%E6%95%B8%E5%8B%81%E6%8F%9A1-30-073617909.html" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <a href="https://tw.stock.yahoo.com/news/%E5%B7%B2%E5%88%B0%E8%B2%A8%E8%82%A1%E6%9D%B1%E6%9C%83%E7%B4%80%E5%BF%B5%E5%93%81%E3%80%8Bcp%E5%80%BC%E7%88%86%E8%A1%A8%EF%BC%81%E4%BB%96%E9%80%81%E6%98%A5%E9%A2%A8%E8%A1%9B%E7%94%9F%E7%B4%99%E4%B8%80%E4%B8%B2-23%E5%AE%B6%E5%A5%BD%E7%89%A9%E9%96%8B%E9%A0%98%E4%B8%AD-081917967.html" target="_blank" style="text-decoration:none">
+            <div style='background:#0d0d20;border-left:3px solid #888888;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#88888820;color:#888888;
                         border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>➡️ 中性</span>
                     <span style='color:#888;font-size:11px'>Yahoo財經</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 8小時前</span>
                 </div>
-                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>政策議題推動信心，上證綜指週五收漲0.87%，滬深300指數勁揚1.30%</div>
+                <div style='color:#e0e0e0;font-size:13px;line-height:1.5'>已到貨股東會紀念品》CP值爆表！他送春風衛生紙一串 23家好物開領中</div>
             </div>
             </a>
             <a href="https://news.google.com/rss/articles/CBMi8AJBVV95cUxQRzhJS3ZoWjJ2TVRfX3dnZDEta24zdnB2WVo3WFVaMklHR3pLb3V4YnpSYjhQRXhiUEF3Slo0eHU0ZjJqV29JV2x1dnQ2ZmR0ZVJzeUV4a3FCT2RPaml1M2dyZUxQVHlobjZBR2VXSTRBVHRZNGJpcVI0VkNhTTZMQy1XXzBhdkI0WDZxUllzQXpvZEJqOVJERVU3bG1Sb3NjcDNJbUx2ejFoWURLMlc2eHFNUldEWndnR0hWTUc0SE1xSFA4RzA4RGlSZmpWUlF0Q3JTeEhkczhzaDROOVlNR3dhR3hHWUF6ZDktU1hmdjcwUHc1Q0NSbGdGZU8tbzIxcXFCOFFscWRiRHJtTDQ3cl96ZWFIQUxpVjkxTnJPOWVMRXV3ZGFqSWRhdGZKSHk3RkdyWGdjbEF1SEZNOG1ZX2NjRVBRNWZ6NDh2OHVPQjVNMC00RlBheno3VlZhOFRNcGMyQ1dubUswZV9NVHhsaQ?oc=5" target="_blank" style="text-decoration:none">
-            <div style='background:#111128;border-left:3px solid #888888;
-                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer'>
-                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center'>
+            <div style='background:#0d0d20;border-left:3px solid #888888;
+                border-radius:8px;padding:12px;margin-bottom:10px;cursor:pointer;
+                transition:background 0.2s' onmouseover="this.style.background='#1a1a2e'"
+                onmouseout="this.style.background='#0d0d20'">
+                <div style='display:flex;gap:8px;margin-bottom:6px;align-items:center;flex-wrap:wrap'>
                     <span style='background:#88888820;color:#888888;
                         border:1px solid #888888;padding:2px 8px;
-                        border-radius:12px;font-size:11px'>➡️ 中性</span>
+                        border-radius:12px;font-size:11px;font-weight:700'>➡️ 中性</span>
                     <span style='color:#888;font-size:11px'>Google中文</span>
                     <span style='color:#555;font-size:11px;margin-left:auto'>⏰ 3天前</span>
                 </div>
@@ -219,7 +427,7 @@ body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif;padding
 </div>
 
 <div style='text-align:center;color:#444;font-size:12px;margin-top:24px'>
-⚠️ AI輔助分析，不保證獲利　｜　AEGIS AI V3　｜　2026-05-22 15:49
+⚠️ AI輔助分析，不保證獲利　｜　AEGIS AI Ultimate　｜　2026-05-22 16:29
 </div>
 </body>
 </html>
