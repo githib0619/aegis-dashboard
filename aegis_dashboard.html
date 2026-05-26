@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEGIS AI 投資儀表板</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box}
+body {background:#0a0a1a;color:#e0e0e0;font-family:'Segoe UI',sans-serif}
+.header {background:linear-gradient(135deg,#1a1a3e,#0d2137);padding:24px 32px;border-bottom:2px solid #00ff88;display:flex;justify-content:space-between;align-items:center}
+.header h1 {font-size:26px;color:#00ff88;letter-spacing:2px}
+.header .time {color:#888;font-size:13px;margin-top:4px}
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:24px}
+.card {background:#111128;border:1px solid #1e1e4a;border-radius:12px;padding:20px}
+.card h2 {font-size:13px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.card .value {font-size:32px;font-weight:700;color:#00ff88}
+.card .sub {font-size:13px;color:#666;margin-top:6px}
+table {width:100%;border-collapse:collapse;margin-top:8px}
+th {background:#1e1e4a;padding:10px;font-size:12px;color:#888;text-align:left}
+td {padding:10px;font-size:13px;border-bottom:1px solid #1e1e4a}
+tr:hover td {background:#1a1a2e}
+.section {padding:0 24px 24px}
+.refresh-btn {position:fixed;bottom:24px;right:24px;background:#00ff88;color:#000;border:none;border-radius:50px;padding:12px 24px;font-size:14px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="header">
+  <div><h1>⚡ AEGIS AI 投資儀表板</h1><div class="time">更新時間：2026-05-24 13:39</div></div>
+  <div style="text-align:right">
+    <div style="color:#00ff88;font-size:20px;font-weight:700">低風險</div>
+    <div style="color:#888;font-size:13px">市場風險可接受</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h2>🏛 台股大盤</h2>
+    <div class="value">42,268</div>
+    <div class="sub">MA20：40,758　MA60：36,517</div>
+    <div class="sub" style="margin-top:6px;color:#00ff88">多頭 ✅</div>
+  </div>
+  <div class="card">
+    <h2>🌏 美股環境</h2>
+    <div class="value">100</div>
+    <div class="sub">美股環境偏多，有利台股強勢股表現</div>
+    <div class="sub" style="margin-top:6px">NASDAQ 短線偏強，科技股環境較有利; 費半指數偏強，對台灣半導體族群有利</div>
+  </div>
+  <div class="card">
+    <h2>🛡 風險指標</h2>
+    <div class="value" style="color:#00ff88">0</div>
+    <div class="sub">低風險</div>
+    <div class="sub" style="margin-top:6px">市場風險可接受</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card"><h2>📊 產業輪動雷達</h2><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>半導體</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:56.9%;height:100%;background:#00ff88;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#00ff88'>56.9</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>AI電子</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:52.1%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>52.1</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>航運</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:50.3%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>50.3</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>金融</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:50.0%;height:100%;background:#ffaa00;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ffaa00'>50.0</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div><div style='display:flex;align-items:center;gap:12px;margin:10px 0'><div style='width:64px;font-size:13px;color:#aaa'>傳產</div><div style='flex:1;height:8px;background:#1e1e4a;border-radius:4px;overflow:hidden'><div style='width:30.8%;height:100%;background:#ff4444;border-radius:4px'></div></div><div style='width:40px;text-align:right;font-size:13px;color:#ff4444'>30.8</div><div style='font-size:11px;color:#666;margin-left:8px'>產業中性 ➡️</div></div></div>
+</div>
+
+<div class="section">
+  <div class="card"><h2>📰 即時市場新聞</h2><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>AI買盤大洗牌！聯發科、三星今年漲幅超車台積電</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>超微半導體豪擲逾百億美元深化台灣合作 攻 2 奈米 AI 晶片</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>📈</span><span style='font-size:13px;color:#ccc'>外資稱台積電為最值得信賴複利成長股，將其 ADR 上調至 430 美元</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>【資安日報】5月22日，微軟修補防毒軟體零時差漏洞</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>📈</span><span style='font-size:13px;color:#ccc'>輝達財報佳 Vera Rubin帶動那些台廠供應鏈含金量大增？</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>【資安新聞週報】AI 自動挖漏洞、串聯攻擊鏈 /MFA 不再安全，身份系統成主戰場</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>輝達財報前晶片股領漲 美股大漲逾1% 台積電ADR躍進</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>投資熱絡 基金平台：女性基金開戶數高於男性 30-39歲女性年增3倍</span></div><div style='padding:10px 0;border-bottom:1px solid #1e1e4a;display:flex;gap:10px'><span style='font-size:18px;flex-shrink:0'>➡️</span><span style='font-size:13px;color:#ccc'>AI動能點火！美股全線收紅、費半狂漲614點</span></div></div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>📊 AI 觀察清單</h2>
+    <table>
+      <tr>
+        <th>股票</th>
+        <th>現價</th>
+        <th>漲跌</th>
+        <th>AI分數</th>
+        <th>RSI</th>
+        <th>MA狀態</th>
+        <th>AI建議</th>
+      </tr>
+      
+            <tr>
+              <td>【6579.TW】6579.TW</td>
+              <td>154.5</td>
+              <td style='color:#00ff88'>+1.31%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>77.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【3014.TW】3014.TW</td>
+              <td>148.0</td>
+              <td style='color:#00ff88'>+2.07%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>77.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【2008.TW】2008.TW</td>
+              <td>27.55</td>
+              <td style='color:#ff4444'>-1.08%</td>
+              <td style='color:#00ff88;font-weight:700'>30</td>
+              <td>50.8</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【3673.TW】3673.TW</td>
+              <td>77.0</td>
+              <td style='color:#00ff88'>+3.77%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>71.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【3167.TW】3167.TW</td>
+              <td>831.0</td>
+              <td style='color:#00ff88'>+9.92%</td>
+              <td style='color:#00ff88;font-weight:700'>85</td>
+              <td>47.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【華新】1605.TW</td>
+              <td>36.5</td>
+              <td style='color:#00ff88'>+2.82%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>66.0</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【裕隆】2201.TW</td>
+              <td>26.85</td>
+              <td style='color:#00ff88'>+0.19%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>50.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【皇翔】2545.TW</td>
+              <td>36.95</td>
+              <td style='color:#ff4444'>-0.94%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>38.7</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【華固】2548.TW</td>
+              <td>123.5</td>
+              <td style='color:#00ff88'>+0.0%</td>
+              <td style='color:#00ff88;font-weight:700'>30</td>
+              <td>51.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【中鋼】2002.TW</td>
+              <td>18.15</td>
+              <td style='color:#ff4444'>-0.27%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>32.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【雄獅】2731.TW</td>
+              <td>160.0</td>
+              <td style='color:#00ff88'>+0.0%</td>
+              <td style='color:#00ff88;font-weight:700'>35</td>
+              <td>45.7</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【台泥】1101.TW</td>
+              <td>24.1</td>
+              <td style='color:#ff4444'>-0.41%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>46.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【華通】2313.TW</td>
+              <td>278.0</td>
+              <td style='color:#00ff88'>+7.75%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>53.0</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【聯發科】2454.TW</td>
+              <td>3860.0</td>
+              <td style='color:#00ff88'>+8.73%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>68.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【力積電】6770.TW</td>
+              <td>63.8</td>
+              <td style='color:#00ff88'>+7.95%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>68.0</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【台表科】6278.TW</td>
+              <td>245.0</td>
+              <td style='color:#00ff88'>+9.87%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>68.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【台積電】2330.TW</td>
+              <td>2255.0</td>
+              <td style='color:#00ff88'>+1.12%</td>
+              <td style='color:#00ff88;font-weight:700'>55</td>
+              <td>47.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【致茂】2360.TW</td>
+              <td>2270.0</td>
+              <td style='color:#00ff88'>+0.0%</td>
+              <td style='color:#00ff88;font-weight:700'>55</td>
+              <td>48.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【緯穎】6669.TW</td>
+              <td>5525.0</td>
+              <td style='color:#00ff88'>+3.37%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>61.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【創意】3443.TW</td>
+              <td>5140.0</td>
+              <td style='color:#00ff88'>+1.48%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>56.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【廣達】2382.TW</td>
+              <td>316.0</td>
+              <td style='color:#00ff88'>+2.6%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>49.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【台達電】2308.TW</td>
+              <td>2095.0</td>
+              <td style='color:#00ff88'>+3.2%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>42.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【中信金】2891.TW</td>
+              <td>57.6</td>
+              <td style='color:#00ff88'>+0.17%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>70.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【緯創】3231.TW</td>
+              <td>144.5</td>
+              <td style='color:#00ff88'>+3.21%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>55.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【鴻海】2317.TW</td>
+              <td>250.0</td>
+              <td style='color:#00ff88'>+1.01%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【瑞昱】2379.TW</td>
+              <td>578.0</td>
+              <td style='color:#00ff88'>+0.52%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>61.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【華邦電】2344.TW</td>
+              <td>125.0</td>
+              <td style='color:#00ff88'>+9.65%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【聯電】2303.TW</td>
+              <td>114.0</td>
+              <td style='color:#ff4444'>-1.72%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>73.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【日月光】3711.TW</td>
+              <td>561.0</td>
+              <td style='color:#00ff88'>+10.0%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>56.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【南亞科】2408.TW</td>
+              <td>310.5</td>
+              <td style='color:#00ff88'>+5.97%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>65.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【聯詠】3034.TW</td>
+              <td>485.5</td>
+              <td style='color:#00ff88'>+0.21%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>71.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【旺宏】2337.TW</td>
+              <td>149.5</td>
+              <td style='color:#00ff88'>+6.03%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>47.5</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【智原】3035.TW</td>
+              <td>211.0</td>
+              <td style='color:#00ff88'>+1.44%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>70.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【矽力】6415.TW</td>
+              <td>562.0</td>
+              <td style='color:#00ff88'>+0.9%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>71.0</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【京元電】2449.TW</td>
+              <td>296.0</td>
+              <td style='color:#00ff88'>+3.5%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>38.3</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【嘉澤】3533.TW</td>
+              <td>2555.0</td>
+              <td style='color:#00ff88'>+1.19%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>48.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【群光】2385.TW</td>
+              <td>131.5</td>
+              <td style='color:#00ff88'>+1.15%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>55.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【晶豪科】3006.TW</td>
+              <td>237.5</td>
+              <td style='color:#00ff88'>+6.98%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>72.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【燿華】2367.TW</td>
+              <td>66.8</td>
+              <td style='color:#00ff88'>+4.21%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>66.1</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【力成】6239.TW</td>
+              <td>283.0</td>
+              <td style='color:#00ff88'>+9.9%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>71.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【欣興】3037.TW</td>
+              <td>970.0</td>
+              <td style='color:#00ff88'>+7.18%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>56.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【聯鈞】3450.TW</td>
+              <td>459.5</td>
+              <td style='color:#00ff88'>+4.43%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【嘉晶】3016.TW</td>
+              <td>121.0</td>
+              <td style='color:#00ff88'>+4.76%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>63.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【文曄】3036.TW</td>
+              <td>289.0</td>
+              <td style='color:#ff4444'>-0.86%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>80.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【華碩】2357.TW</td>
+              <td>682.0</td>
+              <td style='color:#00ff88'>+3.96%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>69.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【技嘉】2376.TW</td>
+              <td>322.5</td>
+              <td style='color:#00ff88'>+1.9%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.6</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【英業達】2356.TW</td>
+              <td>59.5</td>
+              <td style='color:#00ff88'>+9.98%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>81.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【仁寶】2324.TW</td>
+              <td>31.5</td>
+              <td style='color:#00ff88'>+3.79%</td>
+              <td style='color:#00ff88;font-weight:700'>80</td>
+              <td>59.8</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【華擎】3515.TW</td>
+              <td>232.0</td>
+              <td style='color:#00ff88'>+3.34%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>46.6</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【光寶科】2301.TW</td>
+              <td>207.0</td>
+              <td style='color:#00ff88'>+1.22%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【微星】2377.TW</td>
+              <td>124.0</td>
+              <td style='color:#00ff88'>+9.73%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>77.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【神達】3706.TW</td>
+              <td>87.8</td>
+              <td style='color:#00ff88'>+5.15%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>60.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【宏碁】2353.TW</td>
+              <td>29.55</td>
+              <td style='color:#00ff88'>+4.05%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>62.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【佳世達】2352.TW</td>
+              <td>28.75</td>
+              <td style='color:#00ff88'>+5.7%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>74.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【智邦】2345.TW</td>
+              <td>2470.0</td>
+              <td style='color:#ff4444'>-0.4%</td>
+              <td style='color:#00ff88;font-weight:700'>55</td>
+              <td>48.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【威盛】2388.TW</td>
+              <td>88.0</td>
+              <td style='color:#00ff88'>+2.33%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>56.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【健鼎】3044.TW</td>
+              <td>490.5</td>
+              <td style='color:#00ff88'>+0.51%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>55.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【遠傳】4904.TW</td>
+              <td>95.5</td>
+              <td style='color:#ff4444'>-0.21%</td>
+              <td style='color:#00ff88;font-weight:700'>30</td>
+              <td>55.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【中華電】2412.TW</td>
+              <td>137.0</td>
+              <td style='color:#ff4444'>-0.36%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>54.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【群創】3481.TW</td>
+              <td>44.65</td>
+              <td style='color:#00ff88'>+9.98%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>85.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【友達】2409.TW</td>
+              <td>22.2</td>
+              <td style='color:#00ff88'>+9.9%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>74.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【大立光】3008.TW</td>
+              <td>3540.0</td>
+              <td style='color:#00ff88'>+2.31%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>77.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【億光】2393.TW</td>
+              <td>65.2</td>
+              <td style='color:#00ff88'>+1.09%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>33.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【可成】2474.TW</td>
+              <td>187.5</td>
+              <td style='color:#00ff88'>+1.35%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>24.4</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【義隆】2458.TW</td>
+              <td>162.0</td>
+              <td style='color:#00ff88'>+2.21%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>71.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【華新科】2492.TW</td>
+              <td>292.5</td>
+              <td style='color:#00ff88'>+9.96%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>89.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【智寶】2375.TW</td>
+              <td>134.5</td>
+              <td style='color:#00ff88'>+9.8%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>90.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【佳能】2374.TW</td>
+              <td>83.4</td>
+              <td style='color:#00ff88'>+3.73%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>53.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【富邦金】2881.TW</td>
+              <td>95.1</td>
+              <td style='color:#ff4444'>-1.04%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>62.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【國泰金】2882.TW</td>
+              <td>79.7</td>
+              <td style='color:#00ff88'>+1.27%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>62.4</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【玉山金】2884.TW</td>
+              <td>31.3</td>
+              <td style='color:#ff4444'>-0.79%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>50.0</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【兆豐金】2886.TW</td>
+              <td>39.9</td>
+              <td style='color:#ff4444'>-0.75%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>59.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【第一金】2892.TW</td>
+              <td>27.55</td>
+              <td style='color:#ff4444'>-0.54%</td>
+              <td style='color:#00ff88;font-weight:700'>45</td>
+              <td>41.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【華南金】2880.TW</td>
+              <td>31.95</td>
+              <td style='color:#ff4444'>-0.31%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>48.6</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【開發金】2883.TW</td>
+              <td>21.7</td>
+              <td style='color:#00ff88'>+1.4%</td>
+              <td style='color:#00ff88;font-weight:700'>30</td>
+              <td>53.1</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【台新金】2887.TW</td>
+              <td>23.8</td>
+              <td style='color:#ff4444'>-0.21%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>54.5</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【元大金】2885.TW</td>
+              <td>55.1</td>
+              <td style='color:#00ff88'>+0.73%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>60.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【永豐金】2890.TW</td>
+              <td>29.1</td>
+              <td style='color:#ff4444'>-2.02%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>23.6</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【長榮】2603.TW</td>
+              <td>219.0</td>
+              <td style='color:#00ff88'>+3.3%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>61.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【陽明】2609.TW</td>
+              <td>53.0</td>
+              <td style='color:#00ff88'>+3.72%</td>
+              <td style='color:#00ff88;font-weight:700'>80</td>
+              <td>65.0</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【萬海】2615.TW</td>
+              <td>84.3</td>
+              <td style='color:#00ff88'>+3.82%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>70.0</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【華航】2610.TW</td>
+              <td>18.55</td>
+              <td style='color:#ff4444'>-0.8%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>58.7</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【長榮航】2618.TW</td>
+              <td>35.5</td>
+              <td style='color:#00ff88'>+0.57%</td>
+              <td style='color:#00ff88;font-weight:700'>80</td>
+              <td>62.7</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【台塑】1301.TW</td>
+              <td>45.25</td>
+              <td style='color:#ff4444'>-1.09%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>19.7</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【南亞】1303.TW</td>
+              <td>86.7</td>
+              <td style='color:#ff4444'>-0.69%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>47.3</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【台化】1326.TW</td>
+              <td>45.55</td>
+              <td style='color:#00ff88'>+0.22%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>29.1</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【東和鋼鐵】2006.TW</td>
+              <td>65.5</td>
+              <td style='color:#00ff88'>+0.0%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>42.3</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【遠東新】1402.TW</td>
+              <td>27.0</td>
+              <td style='color:#ff4444'>-0.74%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>70.7</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【儒鴻】1476.TW</td>
+              <td>342.5</td>
+              <td style='color:#ff4444'>-0.15%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>52.6</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【聚陽】1477.TW</td>
+              <td>219.0</td>
+              <td style='color:#00ff88'>+0.69%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>57.5</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【豐泰】9910.TW</td>
+              <td>68.7</td>
+              <td style='color:#ff4444'>-0.72%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>43.2</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【東元】1504.TW</td>
+              <td>72.1</td>
+              <td style='color:#00ff88'>+1.41%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>58.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【中石化】1314.TW</td>
+              <td>7.08</td>
+              <td style='color:#ff4444'>-1.67%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>44.5</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【元晶】6443.TW</td>
+              <td>40.05</td>
+              <td style='color:#ff4444'>-0.12%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>63.7</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【新日光】3576.TW</td>
+              <td>18.25</td>
+              <td style='color:#00ff88'>+4.58%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>64.5</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【貿聯】3665.TW</td>
+              <td>2225.0</td>
+              <td style='color:#00ff88'>+3.25%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>27.9</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【亞德客】1590.TW</td>
+              <td>1410.0</td>
+              <td style='color:#ff4444'>-0.7%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>40.6</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【晶技】3042.TW</td>
+              <td>176.0</td>
+              <td style='color:#00ff88'>+10.0%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>55.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【瑞儀】6176.TW</td>
+              <td>107.5</td>
+              <td style='color:#00ff88'>+2.38%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>68.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【辛耘】3583.TW</td>
+              <td>875.0</td>
+              <td style='color:#00ff88'>+1.63%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>59.9</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【旭隼】6409.TW</td>
+              <td>677.0</td>
+              <td style='color:#00ff88'>+2.11%</td>
+              <td style='color:#00ff88;font-weight:700'>0</td>
+              <td>27.6</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【1560.TW】1560.TW</td>
+              <td>688.0</td>
+              <td style='color:#00ff88'>+2.84%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>71.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【正達】3149.TW</td>
+              <td>59.1</td>
+              <td style='color:#00ff88'>+4.42%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>64.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【嘉聯益】6153.TW</td>
+              <td>19.35</td>
+              <td style='color:#00ff88'>+5.45%</td>
+              <td style='color:#00ff88;font-weight:700'>100</td>
+              <td>59.4</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【鴻準】2354.TW</td>
+              <td>60.2</td>
+              <td style='color:#00ff88'>+2.21%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>64.8</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【大同】2371.TW</td>
+              <td>29.5</td>
+              <td style='color:#00ff88'>+3.87%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>40.9</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【昆盈】2365.TW</td>
+              <td>39.15</td>
+              <td style='color:#00ff88'>+7.11%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>61.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【倫飛】2364.TW</td>
+              <td>69.7</td>
+              <td style='color:#00ff88'>+3.41%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>65.2</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【順德】2351.TW</td>
+              <td>186.5</td>
+              <td style='color:#ff4444'>-2.86%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>67.7</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【中環】2323.TW</td>
+              <td>10.2</td>
+              <td style='color:#00ff88'>+3.45%</td>
+              <td style='color:#00ff88;font-weight:700'>65</td>
+              <td>46.5</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【神基】3005.TW</td>
+              <td>104.0</td>
+              <td style='color:#00ff88'>+1.96%</td>
+              <td style='color:#00ff88;font-weight:700'>50</td>
+              <td>62.1</td>
+              <td style='color:#ffaa00'>短線偏多</td>
+              <td style='color:#00ff88'>偏多 📈</td>
+            </tr>
+            <tr>
+              <td>【研華】2395.TW</td>
+              <td>469.0</td>
+              <td style='color:#00ff88'>+1.19%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>74.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【同欣電】6271.TW</td>
+              <td>226.5</td>
+              <td style='color:#00ff88'>+9.95%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>81.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【漢唐】2404.TW</td>
+              <td>1155.0</td>
+              <td style='color:#00ff88'>+5.0%</td>
+              <td style='color:#00ff88;font-weight:700'>40</td>
+              <td>75.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+            <tr>
+              <td>【台勝科】3532.TW</td>
+              <td>248.5</td>
+              <td style='color:#00ff88'>+9.96%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>61.1</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【凌陽】2401.TW</td>
+              <td>30.75</td>
+              <td style='color:#00ff88'>+4.06%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>81.5</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【世芯】3661.TW</td>
+              <td>4895.0</td>
+              <td style='color:#ff4444'>-0.2%</td>
+              <td style='color:#00ff88;font-weight:700'>70</td>
+              <td>61.3</td>
+              <td style='color:#00ff88'>多頭 ✅</td>
+              <td style='color:#00ff88'>強烈看多 🔥</td>
+            </tr>
+            <tr>
+              <td>【泰博】4736.TW</td>
+              <td>123.0</td>
+              <td style='color:#00ff88'>+0.0%</td>
+              <td style='color:#00ff88;font-weight:700'>15</td>
+              <td>41.4</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+            </tr>
+            <tr>
+              <td>【葡萄王】1707.TW</td>
+              <td>103.0</td>
+              <td style='color:#ff4444'>-0.96%</td>
+              <td style='color:#00ff88;font-weight:700'>30</td>
+              <td>12.5</td>
+              <td style='color:#ff4444'>偏弱 ⚠️</td>
+              <td style='color:#ffaa00'>中性 ➡️</td>
+            </tr>
+    </table>
+  </div>
+</div>
+
+<button class="refresh-btn" onclick="location.reload()">🔄 重新整理</button>
+</body>
+</html>
