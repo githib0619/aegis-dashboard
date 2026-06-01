@@ -1,101 +1,12 @@
 {
-  "signal_stats": {
-    "外資大買": {
-      "trades": 4,
-      "wins": 1,
-      "win_rate": 25.0,
-      "avg_pnl": -59254.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 4,
-          "win_rate": 25.0
-        }
-      }
-    },
-    "技術突破": {
-      "trades": 4,
-      "wins": 1,
-      "win_rate": 25.0,
-      "avg_pnl": -59254.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 4,
-          "win_rate": 25.0
-        }
-      }
-    },
-    "Claude看多": {
-      "trades": 5,
-      "wins": 1,
-      "win_rate": 20.0,
-      "avg_pnl": -59533.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 5,
-          "win_rate": 20.0
-        }
-      }
-    },
-    "營收爆發": {
-      "trades": 3,
-      "wins": 1,
-      "win_rate": 33.3,
-      "avg_pnl": -77846.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 3,
-          "win_rate": 33.3
-        }
-      }
-    },
-    "基本面強": {
-      "trades": 2,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_pnl": -116818.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 2,
-          "win_rate": 0.0
-        }
-      }
-    },
-    "投信買超": {
-      "trades": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_pnl": -44739.0,
-      "regime_breakdown": {
-        "多頭": {
-          "trades": 1,
-          "win_rate": 0.0
-        }
-      }
-    }
-  },
+  "signal_stats": {},
   "regime_stats": {
     "未知": {
       "trades": 54,
       "wins": 40,
       "total_pnl": 95541.0
-    },
-    "多頭": {
-      "trades": 8,
-      "wins": 2,
-      "total_pnl": -294284.0
     }
   },
-  "combo_stats": {
-    "外資大買+技術突破": {
-      "trades": 3,
-      "wins": 1,
-      "total_pnl": -192279.0
-    },
-    "外資大買+投信買超": {
-      "trades": 1,
-      "wins": 0,
-      "total_pnl": -44739.0
-    }
-  },
-  "updated": "2026-05-28 18:56"
+  "combo_stats": {},
+  "updated": "2026-06-01 19:58"
 }
